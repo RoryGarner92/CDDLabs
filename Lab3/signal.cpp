@@ -2,29 +2,31 @@
 #include <iostream>
 #include <thread>
 
-void taskOne(std::shared_ptr<Semaphore> theSemaphore){
+int count = 0;
+
+void taskOne(std::shared_ptr<Semaphore> mutex){
+  mutex->Wait();
+  count += 1;
   std::cout <<"I ";
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
-  theSemaphore->Signal();
-}
-void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
-  theSemaphore->Wait();
-  std::cout <<"This ";
-  std::cout << "will ";
-  std::cout << "appear ";
-  std::cout << "second"<<std::endl;
+  mutex->Signal();
 }
 
 int main(void){
-  std::thread threadOne, threadTwo;
-  std::shared_ptr<Semaphore> sem( new Semaphore);
+  std::thread threadOne, threadTwo, threadThree, threadFour;
+  std::shared_ptr<Semaphore> sem( new Semaphore(1));
   /**< Launch the threads  */
-  threadOne=std::thread(taskTwo,sem);
+  threadOne=std::thread(taskOne,sem);
   threadTwo=std::thread(taskOne,sem);
+  threadThree=std::thread(taskOne,sem);
+  threadFour=std::thread(taskOne,sem);
   std::cout << "Launched from the main\n";
   threadOne.join();
   threadTwo.join();
+  threadThree.join();
+  threadFour.join();
+  std::cout << count;
   return 0;
 }
