@@ -6,4 +6,5 @@ hFiles = Semaphore.h
 all: $(cFiles) $(hFiles)
 	$(CC) $(cFlags) $(cFiles) -o Lab2
 
-clean: rm*.o
+clean:
+	rm*.o
