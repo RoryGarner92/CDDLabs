@@ -6,3 +6,8 @@ hFiles = Semaphore.h
 all: $(cFiles) $(hFiles)
 	$(CC) $(cFlags) $(cFiles) -o Lab3
 
+DEBUG: DEBUGFLAGS = -DDEBUG
+DEBUG: ALL
+
+clean:
+	rm*.o
