@@ -9,6 +9,14 @@ Purpose: CDD Lab 3
 #include <iostream>
 #include <thread>
 
+/*! \class Signal
+    \brief An Implementation of a mutex lock Using Semaphores 
+
+   Uses C++11 features such as mutex and condition variables to implement a mutex lock using Semaphores
+
+*/
+
+/* Counter outside main*/
 int count = 0;
 
 void taskOne(std::shared_ptr<Semaphore> mutex){

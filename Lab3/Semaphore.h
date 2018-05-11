@@ -17,7 +17,7 @@ Purpose: CDD Lab 3
 class Semaphore
 {
 private:
-    unsigned int m_uiCount; /*!< Holds the Semaphore count */
+    unsigned int m_uiCount; /*!< Keeps track of the Semaphore count */
     std::mutex m_mutex;
     std::condition_variable m_condition;
 
