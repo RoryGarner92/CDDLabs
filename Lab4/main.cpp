@@ -3,7 +3,7 @@ Name: Rory Garner
 Class : Software Development
 Year : 4
 2017- 2018
-Purpose: CDD Lab 3
+Purpose: CDD Lab 4
 */
 
 #include "Barrier.h"

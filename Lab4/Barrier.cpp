@@ -3,7 +3,7 @@ Name: Rory Garner
 Class : Software Development
 Year : 4
 2017- 2018
-Purpose: CDD Lab 3
+Purpose: CDD Lab 4
 */
 
 #include "Barrier.h"
@@ -14,7 +14,7 @@ Purpose: CDD Lab 3
    Uses C++11 features such as mutex and condition variables to implement a barrier using Semaphores with N number threads
 
 */
-/* Barrier constructor*/
+/*! Barrier constructor*/
 Barrier::Barrier(){
 
   count = 0;
@@ -25,7 +25,7 @@ Barrier::Barrier(){
   barrier2=std::make_shared<Semaphore>(1);
 
 }
-
+/*! Barrier with parameter constructor*/
 Barrier::Barrier(int count){
 
   this->count = count;
@@ -35,35 +35,35 @@ Barrier::Barrier(int count){
   barrier1=std::make_shared<Semaphore>(0);
   barrier2=std::make_shared<Semaphore>(1);
 }
-/*deconstructor*/
+/*! Barrier deconstructor*/
 Barrier::~Barrier(){
 
 }
 
-/*! set count */
+/*! sets count value*/
 void Barrier::setCount(int x){
 
   this->count = x;
 }
-/*! return count */
+/*! returns count value*/
 int Barrier::getCount(){
 
   return this->count;
 }
 
-/*! waits for all the threads */ 
+/*! waits for all the threads and checks which turnstile is active*/ 
 void Barrier::waitForAll(){
 
   if(turnstile == 0){
-    first();
+    phaseOne();
   }
   else{
-    second();
+    phaseTwo();
   }
 
 }
-/*first turnstile */
-void Barrier::first(){
+/*! this is the first turnstile for the barrier*/
+void Barrier::phaseOne(){
 
   mutex->Wait();
   threadNum++;
@@ -76,8 +76,8 @@ void Barrier::first(){
   barrier1->Wait();
   barrier1->Signal();
 }
-/*second turnstile */
-void Barrier::second(){
+/*! this is the second turnstile for the barrier*/
+void Barrier::phaseTwo(){
 
   mutex->Wait();
   threadNum--;
@@ -90,3 +90,4 @@ void Barrier::second(){
   barrier2->Wait();
   barrier2->Signal();
 }
+

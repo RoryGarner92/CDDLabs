@@ -3,7 +3,7 @@ Name: Rory Garner
 Class : Software Development
 Year : 4
 2017- 2018
-Purpose: CDD Lab 3
+Purpose: CDD Lab 4
 */
 
 #include "Semaphore.h"
@@ -32,20 +32,20 @@ private:
   /*! second turnstile*/
   std::shared_ptr<Semaphore> barrier2;
   /*! this is the first turnstile for the barrier*/
-  void first();
+  void phaseOne();
   /*! this is the second turnstile for the barrier*/
-  void second();
+  void phaseTwo();
 
 public:
 
   Barrier();
   ~Barrier();
-
   Barrier(int count);
   /*! sets the count for the barrier*/ 
-  void count(int count);
+  void setCount(int count);
   /*! gets the count for the barrier*/ 
-  int count();
+  int getCount();
   /*! waits for all the threads and checks which turnstile is active*/ 
   void waitForAll();
 };
+
