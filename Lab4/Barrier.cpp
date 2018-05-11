@@ -90,4 +90,3 @@ void Barrier::phaseTwo(){
   barrier2->Wait();
   barrier2->Signal();
 }
-
