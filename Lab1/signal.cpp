@@ -8,7 +8,14 @@ Purpose: CDD Lab 1
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
+/*! \class Signal
+    \brief An Implementation of Threads Using Semaphores 
 
+   Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
+
+*/
+
+/*funct1 + message*/
 void taskOne(std::shared_ptr<Semaphore> theSemaphore){
   std::cout <<"I ";
   std::cout << "must ";
@@ -16,6 +23,7 @@ void taskOne(std::shared_ptr<Semaphore> theSemaphore){
   std::cout << "first"<<std::endl;
   theSemaphore->Signal();
 }
+/*funct2 + message*/
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
   theSemaphore->Wait();
   std::cout <<"This ";
