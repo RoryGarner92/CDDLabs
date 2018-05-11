@@ -6,7 +6,14 @@ Year : 4
 Purpose: CDD Lab 1
 */
 #include "Semaphore.h"
+/*! \class Semaphore
+    \brief A Semaphore Implementation
 
+   Uses C++11 features such as mutex and condition variables to implement Semaphore
+
+*/
+
+/*! Signals to wait */ 
 void Semaphore::Wait()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
@@ -24,6 +31,7 @@ bool Semaphore::Wait(const std::chrono::duration<R,P>& crRelTime)
       return true;
 }
 
+/*! Signals to not wait */
 void Semaphore::Signal()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
