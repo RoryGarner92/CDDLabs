@@ -1,3 +1,10 @@
+/*
+Name: Rory Garner
+Class : Software Development
+Year : 4
+2017- 2018
+Purpose: CDD Lab 3
+*/
 #include "Semaphore.h"
 /*! \class Semaphore
     \brief A Semaphore Implementation
