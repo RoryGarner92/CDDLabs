@@ -8,7 +8,14 @@ Purpose: CDD Lab 2
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
+/*! \class Signal
+    \brief An Implementation of a Rendezvous using Semaphores
 
+   Uses C++11 features such as mutex and condition variables to implement an example of a rendezvous for threads
+
+*/
+
+/* Demo signal wait, half of message one followed by half of message two*/
 void taskOne(std::shared_ptr<Semaphore> theFirstSem, std::shared_ptr<Semaphore> theSecondSem){
   std::cout <<"A ";
   std::cout << "B "<<std::endl;

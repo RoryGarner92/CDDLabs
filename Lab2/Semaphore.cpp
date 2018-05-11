@@ -13,9 +13,7 @@ Purpose: CDD Lab 2
 
 */
 
-
-
-
+/* signal wait*/
 void Semaphore::Wait()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
@@ -34,6 +32,7 @@ bool Semaphore::Wait(const std::chrono::duration<R,P>& crRelTime)
       return true;
 }
 
+/* signal not wait*/
 void Semaphore::Signal()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
