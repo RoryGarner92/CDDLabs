@@ -1,3 +1,7 @@
+#Name : Rory Garner
+#Class : Sofward Development
+#Year : 4 
+#2017-2018
 CC = g++
 cFlags = -std=c++11 -pthread -o Lab3.cpp
 cFiles = signal.cpp Semaphore.cpp
