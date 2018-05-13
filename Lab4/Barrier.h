@@ -32,14 +32,17 @@ private:
   /*! second turnstile*/
   std::shared_ptr<Semaphore> barrier2;
   /*! this is the first turnstile for the barrier*/
-  void phaseOne();
+  void first();
   /*! this is the second turnstile for the barrier*/
-  void phaseTwo();
+  void second();
 
 public:
 
+  /*! construct*/
   Barrier();
+  /*! destruct*/
   ~Barrier();
+
   Barrier(int count);
   /*! sets the count for the barrier*/ 
   void setCount(int count);

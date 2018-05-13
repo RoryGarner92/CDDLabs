@@ -35,7 +35,9 @@ Barrier::Barrier(int count){
   barrier1=std::make_shared<Semaphore>(0);
   barrier2=std::make_shared<Semaphore>(1);
 }
-/*! Barrier deconstructor*/
+
+
+/*! Barrier deconstructor  ~ */
 Barrier::~Barrier(){
 
 }
@@ -55,30 +57,30 @@ int Barrier::getCount(){
 void Barrier::waitForAll(){
 
   if(turnstile == 0){
-    phaseOne();
+    first();
   }
   else{
-    phaseTwo();
+    second();
   }
 
 }
 /*! this is the first turnstile for the barrier*/
-void Barrier::phaseOne(){
-
+void Barrier::first(){
   mutex->Wait();
   threadNum++;
+
   if(threadNum == count){
     barrier2->Wait();
     barrier1->Signal();
     turnstile = 1;
-  }
-  mutex->Signal();
-  barrier1->Wait();
-  barrier1->Signal();
-}
-/*! this is the second turnstile for the barrier*/
-void Barrier::phaseTwo(){
+    }
+    mutex->Signal();
+    barrier1->Wait();
+    barrier1->Signal();
+    }
 
+/*! this is the second turnstile for the barrier*/
+void Barrier::second(){
   mutex->Wait();
   threadNum--;
   if(threadNum == 0){
