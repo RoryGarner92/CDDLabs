@@ -19,11 +19,11 @@ Purpose: CDD Lab 4
 class Barrier
 {
 private:
-  /*! number of threads using the barrier*/
+  /*! keeps count of the number of threads using the barrier*/
   int count;
-  /*! current thread active*/
+  /*! keeps track of the current thread active*/
   int threadNum;
-  /*! current turnstile active*/
+  /*! current turnstile active one or two */
   int turnstile;
   /*! mutex which only allows one thread to execute at once*/
   std::shared_ptr<Semaphore> mutex;
@@ -48,7 +48,7 @@ public:
   void setCount(int count);
   /*! gets the count for the barrier*/ 
   int getCount();
-  /*! waits for all the threads and checks which turnstile is active*/ 
+  /*! waits for all the threads and checks which turnstile is active, */ 
   void waitForAll();
 };
 
