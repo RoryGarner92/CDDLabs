@@ -4,13 +4,13 @@
 # Usage
 C++ Programming labs for (J.K) with Emacs
 
-#Run the make file 
+# Run the make file 
 Make -k
 
-#Run the file
+# Run the file
 ./  (NAME OF THE FILE)
 
-#Run Doxy
+# Run Doxy
 doxygen -g 
 doxywizard (makes the latex & html)
 
