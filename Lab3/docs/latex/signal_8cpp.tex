@@ -1,10 +1,16 @@
-\hypertarget{signal_8cpp}{}\section{signal.\+cpp File Reference}
-\label{signal_8cpp}\index{signal.\+cpp@{signal.\+cpp}}
-{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
-{\ttfamily \#include $<$iostream$>$}\newline
-{\ttfamily \#include $<$thread$>$}\newline
+\hypertarget{signal_8cpp}{}\section{Lab3/signal.cpp File Reference}
+\label{signal_8cpp}\index{Lab3/signal.\+cpp@{Lab3/signal.\+cpp}}
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$thread$>$}\\*
 Include dependency graph for signal.\+cpp\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{signal_8cpp__incl}
+\end{center}
+\end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,24 +26,23 @@ int \hyperlink{signal_8cpp_ad43c3812e6d13e0518d9f8b8f463ffcf}{count} = 0
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{signal_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{signal_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
 \index{signal.\+cpp@{signal.\+cpp}!main@{main}}
 \index{main@{main}!signal.\+cpp@{signal.\+cpp}}
-\subsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
-
-$<$ Launch the threads \mbox{\Hypertarget{signal_8cpp_a1b2b599e813718a52e92849734f20181}\label{signal_8cpp_a1b2b599e813718a52e92849734f20181}} 
-\index{signal.\+cpp@{signal.\+cpp}!task\+One@{task\+One}}
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{signal_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\label{signal_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
+$<$ Launch the threads \index{signal.\+cpp@{signal.\+cpp}!task\+One@{task\+One}}
 \index{task\+One@{task\+One}!signal.\+cpp@{signal.\+cpp}}
-\subsubsection{\texorpdfstring{task\+One()}{taskOne()}}
-{\footnotesize\ttfamily void task\+One (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{mutex }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{task\+One(std\+::shared\+\_\+ptr$<$ Semaphore $>$ mutex)}{taskOne(std::shared_ptr< Semaphore > mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}void task\+One (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Semaphore} $>$}]{mutex}
+\end{DoxyParamCaption}
+)}\hypertarget{signal_8cpp_a1b2b599e813718a52e92849734f20181}{}\label{signal_8cpp_a1b2b599e813718a52e92849734f20181}
 
 
 \subsection{Variable Documentation}
-\mbox{\Hypertarget{signal_8cpp_ad43c3812e6d13e0518d9f8b8f463ffcf}\label{signal_8cpp_ad43c3812e6d13e0518d9f8b8f463ffcf}} 
 \index{signal.\+cpp@{signal.\+cpp}!count@{count}}
 \index{count@{count}!signal.\+cpp@{signal.\+cpp}}
-\subsubsection{\texorpdfstring{count}{count}}
-{\footnotesize\ttfamily int count = 0}
-
+\subsubsection[{\texorpdfstring{count}{count}}]{\setlength{\rightskip}{0pt plus 5cm}int count = 0}\hypertarget{signal_8cpp_ad43c3812e6d13e0518d9f8b8f463ffcf}{}\label{signal_8cpp_ad43c3812e6d13e0518d9f8b8f463ffcf}

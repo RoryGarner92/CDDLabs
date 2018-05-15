@@ -11,7 +11,7 @@ Make -k
 ./  (NAME OF THE FILE)
 
 #Run Doxy
-doxy -g 
+doxygen -g 
 doxywizard (makes the latex & html)
 
 
